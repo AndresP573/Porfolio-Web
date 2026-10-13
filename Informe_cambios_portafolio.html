@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de cambios | Portfolio web</title>
+    <style>
+        :root {
+            --tinta: #1c1729;
+            --verde: #172d48;
+            --acento: #7997f2;
+            --coral: #e66b4e;
+            --papel: #f2f3ec;
+            --borde: #d5ddd4;
+        }
+
+        @page {
+            size: A4;
+            margin: 17mm 18mm;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            color: var(--tinta);
+            background: #fff;
+            font: 10.5pt/1.55 "Segoe UI", Arial, sans-serif;
+        }
+
+        .portada {
+            margin: -17mm -18mm 12mm;
+            padding: 23mm 18mm 16mm;
+            background: var(--verde);
+            color: #fffefa;
+        }
+
+        .etiqueta {
+            margin: 0 0 5mm;
+            color: var(--acento);
+            font-size: 9pt;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+        h1 { max-width: 145mm; margin: 0; font-size: 30pt; line-height: 1.12; }
+        .subtitulo { margin: 5mm 0 0; color: #e3ece5; font-size: 13pt; }
+        .fecha { margin: 10mm 0 0; color: var(--acento); font-size: 9.5pt; }
+        h2 { margin: 10mm 0 4mm; padding-bottom: 2mm; border-bottom: 1px solid var(--borde); font-size: 19pt; }
+        h3 { margin: 5mm 0 1mm; color: var(--verde); font-size: 13pt; }
+        p { margin: 1.5mm 0 3mm; }
+        ul { margin: 1.5mm 0 4mm; padding-left: 6mm; }
+        li { margin: 1mm 0; }
+        code { color: #17483e; font: 9.5pt Consolas, "Courier New", monospace; }
+        .resumen {
+            margin: 0 0 7mm;
+            padding: 4mm 5mm;
+            border-left: 3px solid var(--coral);
+            background: var(--papel);
+        }
+        .bloque { break-inside: avoid; }
+        .nota {
+            margin-top: 4mm;
+            padding: 4mm 5mm;
+            border: 1px solid var(--borde);
+            border-radius: 2mm;
+            background: #f8faf5;
+        }
+        .nota strong { color: var(--verde); }
+        .pie {
+            margin-top: 12mm;
+            padding-top: 3mm;
+            border-top: 1px solid var(--borde);
+            color: #52625c;
+            font-size: 8.5pt;
+        }
+    </style>
+</head>
+<body>
+    <header class="portada">
+        <p class="etiqueta">Informe tecnico</p>
+        <h1>Portfolio web: cambios en HTML, CSS y JavaScript</h1>
+        <p class="subtitulo">Resumen detallado de estructura, presentacion e interactividad.</p>
+        <p class="fecha">12 de octubre de 2026</p>
+    </header>
+
+    <main>
+        <p class="resumen"><strong>Resultado:</strong> una pagina estatica de portfolio con navegacion, proyectos, formulario y estilos responsive. Se agregaron ajustes de validacion, mejor estructura visual y una seccion de habilidades para completar la presentacion.</p>
+
+        <section class="bloque">
+            <h2>HTML: estructura y contenido</h2>
+            <p>El documento sigue con <code>lang="es"</code>, codificacion UTF-8 y viewport para mobile. Se renombro el titulo principal y se agrego una meta descripcion para mejorar la pagina.</p>
+            <ul>
+                <li>Se mantuvo la navegacion con las secciones <code>#sobre-mi</code>, <code>#proyectos</code> y <code>#contacto</code>.</li>
+                <li>Se agrego una seccion de habilidades dentro de “Sobre mi” para dar mas contexto del perfil.</li>
+                <li>Se ampliaron los proyectos a tres tarjetas para que la pagina se vea mas completa.</li>
+                <li>Se añadieron tooltips sobre cada habilidad para explicar su tecnologia al pasar el cursor sobre ellas.</li>
+                <li>Se mantuvieron etiquetas y campos del formulario vinculados con <code>for</code> e IDs.</li>
+                <li>Se agrego <code>novalidate</code> para controlar la validacion con JavaScript y evitar mensajes nativos del navegador.</li>
+                <li>Se corrigieron textos visibles para dejar el contenido sin tildes, sin perder la legibilidad del proyecto.</li>
+            </ul>
+        </section>
+
+        <section class="bloque">
+            <h2>CSS: diseno visual y adaptacion</h2>
+            <p>La hoja de estilos se reforzo para dar una presentacion mas pulida y con mejor ritmo visual.</p>
+            <ul>
+                <li>Se agrego un fondo suave con degradado y sombras ligeras para mejorar la apariencia general.</li>
+                <li>Se creo un layout de dos columnas para la seccion “Sobre mi” con una caja de habilidades.</li>
+                <li>Se anadieron efectos hover en proyectos y mejor espaciado para dispositivos pequenos.</li>
+                <li>Se ajustaron media queries para que la seccion de proyectos y la cuadricula de contenido se adapten mejor a pantallas estrechas.</li>
+                <li>Se mejoraron los estilos del boton y el estado del formulario para que se vean con mejor contraste.</li>
+            </ul>
+        </section>
+
+        <section class="bloque">
+            <h2>JavaScript: validacion y mejor feedback</h2>
+            <ul>
+                <li>Se mantiene el año dinamico en el footer con <code>new Date().getFullYear()</code>.</li>
+                <li>Se valida el nombre, correo y mensaje antes de aceptar el envio.</li>
+                <li>Se comprueba el formato del correo con una expresion regular sencilla.</li>
+                <li>Se muestra un mensaje claro si falta informacion y se mueve el foco al campo invalido.</li>
+                <li>Se limpia el estado del formulario al escribir en cualquiera de los campos.</li>
+            </ul>
+            <p class="nota"><strong>Limite funcional:</strong> el envio real aun no se conecta a un backend ni a un servicio externo. La validacion actual sirve como feedback visual y de UX.</p>
+        </section>
+
+        <section class="bloque">
+            <h2>Verificacion realizada</h2>
+            <ul>
+                <li>Se comprobo la sintaxis de <code>script.js</code> con <code>node --check</code>.</li>
+                <li>Se revisaron los archivos HTML, CSS y JS para confirmar que los selectores y la estructura siguen coherent.</li>
+                <li>Se reviso que los comentarios del codigo se mantengan intactos, tal como se pidio.</li>
+            </ul>
+            <p>Los cambios se registran en esta pagina de informe para dejar un seguimiento claro del proyecto.</p>
+        </section>
+    </main>
+
+    <footer class="pie">Informe del portfolio web · HTML, CSS y JavaScript</footer>
+</body>
+</html>
