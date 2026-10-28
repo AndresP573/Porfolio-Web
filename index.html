@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="es"><!-- Esto sirve para definir el tipo de documento como HTML5 y establecer el idioma del contenido como español -->
+<html lang="es"><!-- Establecer el idioma del contenido como español -->
 <head>
     <meta charset="UTF-8"><!-- Esto sirve para definir la codificacion de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Esto sirve para establecer la configuracion de la ventana grafica para que se ajuste al ancho del dispositivo y tenga un nivel de zoom inicial de 1.0 -->
-    <meta name="description" content="Portfolio personal de desarrollo web y proyectos creativos."><!-- Esto sirve para describir el contenido de la pagina para buscadores y lectores de pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- para que rellene el ancho de la pantalla y el zoom inicial de 1.0 -->
+    <meta name="description" content="Portfolio personal Andres Pozzi."><!-- Descripcion del contenido de la pagina para buscadores y lectores de pantalla -->
     <title>Mi portfolio</title>
-    <link rel="stylesheet" href="style/style.css"><!-- Esto sirve para enlazar el archivo de hoja de estilos CSS externo llamado "style.css" -->
-    <script src="js/script.js" defer></script><!-- Esto sirve para enlazar el archivo de script JavaScript externo llamado "script.js" y diferir su ejecucion hasta que el documento HTML se haya analizado completamente -->
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header><!-- Esto sirve para definir el encabezado de la pagina, que contiene el titulo y la navegacion principal -->
+    <header><!-- El encabezado de la pagina, que contiene el titulo y la navegacion principal -->
         <h1>Mi portfolio</h1>
-        <nav aria-label="Menu principal"><!-- Esto sirve para definir la seccion de navegacion principal de la pagina -->
-            <ul><!-- Esto sirve para crear una lista desordenada que contendra los enlaces de navegacion -->
-                <li><a href="#sobre-mi">Sobre mi</a></li><!-- Esto sirve para crear un enlace de navegacion que apunta a la seccion con el id "sobre-mi" -->
+        <nav aria-label="Menu principal"><!-- Seccion de navegacion principal de la pagina -->
+            <!-- Lista desordenada -->
+            <ul>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="sobre-mi"><!-- Esto sirve para definir una seccion de contenido con el id "sobre-mi", que contiene informacion sobre el autor del portafolio -->
+    <main> <!-- Es el contenedor principal de las secciones de informacion sobre el autor, proyectos y contacto -->
+        <section id="sobre-mi">
             <div class="sobre-mi-grid">
                 <div>
                     <h2>Sobre mi</h2>
-                    <p>Hola, estoy interesado en trabajar en proyectos de desarrollo web y crear experiencias utiles para las personas.</p>
+                    <p>Hola Soy Andres, tengo 26 años y soy desarrollador web. <br> Me especializo en crear experiencias web accesibles y atractivas. </p>
                 </div>
                 <div class="lista-container">
                     <h3>Habilidades</h3>
@@ -33,6 +34,7 @@
                         <li class="skill" tabindex="0" data-tooltip="HTML: lenguaje de marcado para estructurar contenido web y paginas accesibles.">HTML</li>
                         <li class="skill" tabindex="0" data-tooltip="CSS: lenguaje para dar estilo, colores, layout y adaptacion visual.">CSS</li>
                         <li class="skill" tabindex="0" data-tooltip="JavaScript: lenguaje para agregar interactividad, validacion y dinamismo en la web.">JavaScript</li>
+                        <li class="skill" tabindex="0" data-tooltip="Java: lenguaje de programacion orientado a objetos, ampliamente utilizado en el desarrollo de aplicaciones empresariales.">Java</li>
                         <li class="skill" tabindex="0" data-tooltip="Diseno responsive: adaptacion de la interfaz para que funcione en distintas pantallas y dispositivos.">Diseno responsive</li>
                     </ul>
                 </div>
@@ -41,31 +43,31 @@
 
         <section id="proyectos">
             <h2>Proyectos</h2>
-            <article class="proyecto"><!-- Esto sirve para definir un contenedor de proyecto con la clase "proyecto", que contiene informacion sobre un proyecto especifico -->
-                <h3>Proyecto 1</h3>
-                <p>Diseno y desarrollo de una landing page con enfoque visual y accesibilidad.</p>
+            <article class="proyecto"><!-- Define un contenedor de proyecto con la clase "proyecto", que contiene informacion sobre un proyecto especifico -->
+                <h3>VitalHome</h3>
+                <p>Desarrollo de una aplicacion movil para el cuidado de adultos mayores.</p>
             </article>
             <article class="proyecto">
-                <h3>Proyecto 2</h3>
-                <p>Creacion de un dashboard simple con secciones claras y una experiencia de usuario amigable.</p>
+                <h3>La Esmalteria</h3>
+                <p>Aplicacion de escritorio para la gestion de emprendimientos de belleza.</p>
             </article>
             <article class="proyecto">
-                <h3>Proyecto 3</h3>
-                <p>Implementacion de un sistema de formularios y validacion para una web de contacto moderna.</p>
+                <h3>Aprendo facil</h3>
+                <p>Aplicacion web que se utiliza para el aprendisaje de tecnologias en adultos mayores.</p>
             </article>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <form action="#" method="post" novalidate><!-- Esto sirve para definir un formulario de contacto que enviara los datos mediante el metodo POST a la URL especificada en el atributo "action" (en este caso, "#", lo que significa que no se enviara a ningun servidor) -->
+            <form action="#" method="post" novalidate><!-- JavaScript envia los datos del formulario a la API de contacto. -->
                 <label for="nombre">Nombre:</label><!-- Esto sirve para crear una etiqueta de formulario que indica que el campo de entrada siguiente es para el nombre, y se asocia con el campo de entrada mediante el atributo "for" que coincide con el id del campo de entrada -->
-                <input type="text" id="nombre" name="nombre" required autocomplete="name"><!-- Esto sirve para crear un campo de entrada de texto para el nombre, con el id "nombre", el nombre del campo "nombre" y el atributo "required" que indica que este campo es obligatorio -->
+                <input type="text" id="nombre" name="nombre" maxlength="100" required autocomplete="name"><!-- Esto sirve para crear un campo de entrada de texto para el nombre, con el id "nombre", el nombre del campo "nombre" y el atributo "required" que indica que este campo es obligatorio -->
 
                 <label for="correo">Correo electronico:</label>
-                <input type="email" id="correo" name="correo" required autocomplete="email">
+                <input type="email" id="correo" name="correo" maxlength="254" required autocomplete="email">
 
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
+                <textarea id="mensaje" name="mensaje" maxlength="5000" required></textarea>
 
                 <button type="submit">Enviar</button>
                 <p id="estado-formulario" role="status" aria-live="polite"></p><!-- Esto sirve para crear un parrafo que mostrara el estado del formulario, con el id "estado-formulario", el rol "status" que indica que es un mensaje de estado y el atributo "aria-live" con el valor "polite" que indica que los cambios en este elemento deben ser anunciados de manera educada por los lectores de pantalla -->

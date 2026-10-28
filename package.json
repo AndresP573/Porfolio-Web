@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio personal con formulario de contacto y base de datos SQLite",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

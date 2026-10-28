@@ -1,4 +1,4 @@
-:root { /* Esto sirve para definir las variables de estilo*/
+:root { /* Variables de estilo*/
 	--tinta: #171e29;
 	--verde: #172d48;
 	--acento: #7997f2;
@@ -9,15 +9,15 @@
 	--sombra: rgba(15, 23, 42, 0.12);
 }
 
-* { /* Esto sirve para que el padding y el border se incluyan en el ancho y alto de los elementos */
+* { /* El padding y el border se incluyen en el ancho y alto de los elementos */
 	box-sizing: border-box;
 }
 
-html {/* Esto sirve para que el scroll sea suave al hacer click en los enlaces de navegacion */
+html {/* Scroll suave al hacer click en los enlaces de navegacion */
 	scroll-behavior: smooth;
 }
 
-body {/* Esto sirve para quitar el margen por defecto del body y definir el fondo, color de texto, fuente y altura de linea */
+body {/* Quitar el margen por defecto del body */
 	margin: 0;
 	background: linear-gradient(180deg, var(--papel) 0%, #edf1ec 100%);
 	color: var(--tinta);
@@ -25,11 +25,11 @@ body {/* Esto sirve para quitar el margen por defecto del body y definir el fond
 	line-height: 1.6;
 }
 
-main {
+main {/*Definir el contenedor principal como un contenedor de bloque */
 	display: block;
 }
 
-header {/* Esto sirve para definir el header como un contenedor flexible, alinear los elementos verticalmente, justificar el espacio entre ellos, definir un espacio entre los elementos, un padding y un fondo */
+header {/* Header como un contenedor flexible, alinear los elementos verticalmente, justificar el espacio entre ellos, definir un espacio entre los elementos, un padding y un fondo */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -39,22 +39,22 @@ header {/* Esto sirve para definir el header como un contenedor flexible, alinea
 	color: var(--blanco);
 	box-shadow: 0 10px 30px var(--sombra);
 }
-
-header h1,/* Esto sirve para definir el tamaño de fuente y la altura de linea del h1 dentro del header */
-section h2,/* Esto sirve para definir el tamaño de fuente y la altura de linea del h2 dentro de las secciones */
-.proyecto h3,/* Esto sirve para definir el tamaño de fuente y la altura de linea del h3 dentro de los proyectos */
-.lista-container h3 {/* Esto sirve para definir el tamaño de fuente y la altura de linea del h3 dentro de los proyectos y la lista de habilidades */
+/* Estilos para los encabezados */
+header h1,
+section h2,
+.proyecto h3,
+.lista-container h3 {
 	font-family: "Arial", "Times New Roman", serif;
 	font-weight: 500;
 }
 
-header h1 {/* Esto sirve para quitar el margen por defecto del h1 dentro del header y definir el tamaño de fuente y la altura de linea */
+header h1 {/* Para quitar el margen por defecto del h1 dentro del header y definir el tamaño de fuente y la altura de linea */
 	margin: 0;
 	font-size: 3.25rem;
 	line-height: 1.15;
 }
 
-nav ul {/* Esto sirve para definir el contenedor de navegacion como un contenedor flexible, permitir que los elementos se ajusten a la siguiente linea, definir un espacio entre los elementos, quitar el margen y el padding por defecto y quitar los puntos de la lista */
+nav ul {/* Define el contenedor de navegacion como un contenedor flexible, permitir que los elementos se ajusten a la siguiente linea, definir un espacio entre los elementos, quitar el margen y el padding por defecto y quitar los puntos de la lista */
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.75rem 1.5rem;
@@ -63,7 +63,7 @@ nav ul {/* Esto sirve para definir el contenedor de navegacion como un contenedo
 	list-style: none;
 }
 
-nav a {/* Esto sirve para quitar el subrayado de los enlaces de navegacion, definir el color del texto, el peso de la fuente, el color de la decoracion del texto y el desplazamiento del subrayado */
+nav a {/* Para quitar el subrayado de los enlaces de navegacion, definir el color del texto, el peso de la fuente, el color de la decoracion del texto y el desplazamiento del subrayado */
     text-decoration: underline;
 	color: var(--blanco);
 	font-weight: 700;
@@ -72,25 +72,25 @@ nav a {/* Esto sirve para quitar el subrayado de los enlaces de navegacion, defi
 	transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-nav a:hover,/* Esto sirve para definir el color del texto y el color de la decoracion del texto al pasar el cursor sobre los enlaces de navegacion */
-nav a:focus-visible {/* Esto sirve para definir el color del texto y el color de la decoracion del texto al enfocar los enlaces de navegacion con el teclado */
+nav a:hover,/* Color del texto y el color de la decoracion del texto al pasar el cursor sobre los enlaces de navegacion */
+nav a:focus-visible {
 	color: var(--acento);
 	text-decoration-color: currentColor;
 }
 
-section {/* Esto sirve para definir un ancho maximo, centrar el contenido y definir un padding en las secciones */
+section {/* Define un ancho maximo, centrar el contenido y definir un padding en las secciones */
 	max-width: 1080px;
 	margin: 0 auto;
 	padding: 4rem 1.5rem;
 }
 
-section h2 {/* Esto sirve para definir un margen inferior, el tamaño de fuente y la altura de linea del h2 dentro de las secciones */
+section h2 {/* Define un margen inferior, el tamaño de fuente y la altura de linea del h2 dentro de las secciones */
 	margin: 0 0 1.25rem;
 	font-size: 2.4rem;
 	line-height: 1.2;
 }
 
-#sobre-mi {/* Esto sirve para definir un ancho maximo, centrar el contenido y un borde inferior en la seccion "sobre-mi" */
+#sobre-mi {/* Define un ancho maximo, centrar el contenido y un borde inferior en la seccion "sobre-mi" */
 	border-bottom: 1px solid var(--borde);
 }
 
@@ -101,7 +101,7 @@ section h2 {/* Esto sirve para definir un margen inferior, el tamaño de fuente 
 	align-items: start;
 }
 
-#sobre-mi p {/* Esto sirve para definir un ancho maximo, quitar el margen, definir el color del texto y el tamaño de fuente en los parrafos dentro de la seccion "sobre-mi" */
+#sobre-mi p {/* Define un ancho maximo, quitar el margen, definir el color del texto y el tamaño de fuente en los parrafos dentro de la seccion "sobre-mi" */
 	max-width: 58ch;
 	margin: 0;
 	color: #424954;

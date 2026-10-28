@@ -81,13 +81,13 @@
 <body>
     <header class="portada">
         <p class="etiqueta">Informe tecnico</p>
-        <h1>Portfolio web: cambios en HTML, CSS y JavaScript</h1>
-        <p class="subtitulo">Resumen detallado de estructura, presentacion e interactividad.</p>
-        <p class="fecha">12 de octubre de 2026</p>
+        <h1>Portfolio web: cambios en HTML, CSS, JavaScript y backend</h1>
+        <p class="subtitulo">Historial de la estructura, el diseno, la interactividad y la base de datos.</p>
+        <p class="fecha">28 de octubre de 2026</p>
     </header>
 
     <main>
-        <p class="resumen"><strong>Resultado:</strong> una pagina estatica de portfolio con navegacion, proyectos, formulario y estilos responsive. Se agregaron ajustes de validacion, mejor estructura visual y una seccion de habilidades para completar la presentacion.</p>
+        <p class="resumen"><strong>Resultado:</strong> se mejoraron la estructura y el diseno responsive del portfolio, se agregaron habilidades y validaciones para el formulario, y luego se conecto el contacto a un servidor Node.js con una base SQLite local.</p>
 
         <section class="bloque">
             <h2>HTML: estructura y contenido</h2>
@@ -116,28 +116,54 @@
         </section>
 
         <section class="bloque">
-            <h2>JavaScript: validacion y mejor feedback</h2>
+            <h2>JavaScript: validacion, envio y feedback</h2>
             <ul>
                 <li>Se mantiene el año dinamico en el footer con <code>new Date().getFullYear()</code>.</li>
                 <li>Se valida el nombre, correo y mensaje antes de aceptar el envio.</li>
                 <li>Se comprueba el formato del correo con una expresion regular sencilla.</li>
                 <li>Se muestra un mensaje claro si falta informacion y se mueve el foco al campo invalido.</li>
                 <li>Se limpia el estado del formulario al escribir en cualquiera de los campos.</li>
+                <li>Se conecta el formulario con <code>POST /api/contact</code> mediante una solicitud JSON.</li>
+                <li>Se informa el estado del envio, se deshabilita temporalmente el boton y se limpia el formulario cuando se guarda el mensaje.</li>
+                <li>Se muestra un mensaje si falla la conexion o el servidor y se habilita nuevamente el boton.</li>
             </ul>
-            <p class="nota"><strong>Limite funcional:</strong> el envio real aun no se conecta a un backend ni a un servicio externo. La validacion actual sirve como feedback visual y de UX.</p>
+        </section>
+
+        <section class="bloque">
+            <h2>Servidor y base de datos</h2>
+            <ul>
+                <li>Se agrego un servidor con <code>Node.js</code> y <code>Express</code> en <code>server.js</code>.</li>
+                <li>Al iniciar, crea automaticamente la base <code>.data/portfolio.sqlite</code> y la tabla <code>contact_messages</code>, con ID, nombre, correo, mensaje y fecha de creacion.</li>
+                <li>La ruta <code>POST /api/contact</code> valida los datos y los guarda usando una consulta preparada de SQLite.</li>
+                <li>Se limita el tamano de las solicitudes y se devuelven respuestas claras para datos invalidos o errores.</li>
+                <li>El servidor entrega la pagina y sus archivos estaticos para que el formulario y la API funcionen desde el mismo origen.</li>
+                <li>La carpeta <code>.data/</code> se excluye de Git para no versionar los mensajes guardados localmente.</li>
+            </ul>
+        </section>
+
+        <section class="bloque">
+            <h2>Configuracion y uso</h2>
+            <ul>
+                <li><code>package.json</code> define las dependencias del servidor, el requisito de Node.js y los comandos <code>npm start</code> y <code>npm test</code>.</li>
+                <li>Se agregaron limites de caracteres a los campos y comentarios en espanol en <code>server.js</code> para explicar sus funciones principales.</li>
+                <li>El servidor se inicia con <code>npm start</code> y sirve el sitio en <code>http://localhost:3000</code>; se requiere Node.js 22.13 o superior.</li>
+            </ul>
+            <p class="nota"><strong>Como ejecutar:</strong> instalar las dependencias con <code>npm install</code>, iniciar con <code>npm start</code> y abrir <code>http://localhost:3000</code>.</p>
         </section>
 
         <section class="bloque">
             <h2>Verificacion realizada</h2>
             <ul>
-                <li>Se comprobo la sintaxis de <code>script.js</code> con <code>node --check</code>.</li>
-                <li>Se revisaron los archivos HTML, CSS y JS para confirmar que los selectores y la estructura siguen coherent.</li>
-                <li>Se reviso que los comentarios del codigo se mantengan intactos, tal como se pidio.</li>
+                <li><code>npm test</code>: las dos pruebas automatizadas pasan; verifican la pagina, el guardado de un mensaje valido y el rechazo de datos invalidos.</li>
+                <li><code>node --check server.js</code> y <code>node --check js/script.js</code>: sintaxis verificada.</li>
+                <li>Se comprobaron los archivos HTML, CSS y JavaScript, incluidos los selectores y la estructura de la pagina.</li>
+                <li>Se comprobo el servidor en ejecucion: la pagina responde correctamente y la API guarda mensajes validos y devuelve un error para datos incorrectos.</li>
+                <li><code>git diff --check</code>: no se encontraron errores de espacios en los cambios.</li>
             </ul>
-            <p>Los cambios se registran en esta pagina de informe para dejar un seguimiento claro del proyecto.</p>
+            <p>Los proyectos del portfolio siguen definidos en el HTML; la base de datos se utiliza unicamente para los mensajes de contacto.</p>
         </section>
     </main>
 
-    <footer class="pie">Informe del portfolio web · HTML, CSS y JavaScript</footer>
+    <footer class="pie">Informe del portfolio web · HTML, CSS, JavaScript, Node.js y SQLite</footer>
 </body>
 </html>
