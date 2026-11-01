@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio personal Andres Pozzi.">
+    <title>Mi portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Mi portfolio</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#sobre-mi">Sobre mi</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre-mi">
+            <div class="sobre-mi-grid">
+                <div>
+                    <h2>Sobre mi</h2>
+                    <p>Hola Soy Andres, tengo 26 años y soy desarrollador web. <br> Me especializo en crear experiencias web accesibles y atractivas. </p>
+                </div>
+                <div class="lista-container">
+                    <h3>Habilidades</h3>
+                    <ul class="lista-habilidades">
+                        <li class="skill" tabindex="0" data-tooltip="HTML: lenguaje de marcado para estructurar contenido web y paginas accesibles.">HTML</li>
+                        <li class="skill" tabindex="0" data-tooltip="CSS: lenguaje para dar estilo, colores, layout y adaptacion visual.">CSS</li>
+                        <li class="skill" tabindex="0" data-tooltip="JavaScript: lenguaje para agregar interactividad, validacion y dinamismo en la web.">JavaScript</li>
+                        <li class="skill" tabindex="0" data-tooltip="Java: lenguaje de programacion orientado a objetos, ampliamente utilizado en el desarrollo de aplicaciones empresariales.">Java</li>
+                        <li class="skill" tabindex="0" data-tooltip="Diseno responsive: adaptacion de la interfaz para que funcione en distintas pantallas y dispositivos.">Diseno responsive</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" aria-live="polite">
+            <h2>Proyectos</h2>
+            <div id="proyectos-lista" class="proyectos-lista"></div>
+            <form id="proyecto-form" class="proyecto-form">
+                <h3>Gestionar proyectos</h3>
+                <label for="project-name">Nombre</label>
+                <input id="project-name" type="text" name="name" maxlength="100" required>
+
+                <label for="project-description">Descripcion</label>
+                <textarea id="project-description" name="description" maxlength="1000" required></textarea>
+
+                <label for="project-technologies">Tecnologias (separadas por coma)</label>
+                <input id="project-technologies" type="text" name="technologies" required>
+
+                <label for="project-image">Imagen / enlace</label>
+                <input id="project-image" type="url" name="image" required>
+
+                <label for="project-status">Estado</label>
+                <select id="project-status" name="status">
+                    <option value="Publicado">Publicado</option>
+                    <option value="En desarrollo">En desarrollo</option>
+                    <option value="Borrador">Borrador</option>
+                </select>
+
+                <div class="form-buttons">
+                    <button type="submit">Guardar proyecto</button>
+                    <button type="button" class="secondary" id="cancelar-edicion" hidden>Cancelar</button>
+                </div>
+                <p id="proyecto-estado" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#" method="post" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="100" required autocomplete="name">
+
+                <label for="correo">Correo electronico:</label>
+                <input type="email" id="correo" name="correo" maxlength="254" required autocomplete="email">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" maxlength="5000" required></textarea>
+
+                <button type="submit">Enviar</button>
+                <p id="estado-formulario" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="anio-actual"></span> Mi portfolio. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
